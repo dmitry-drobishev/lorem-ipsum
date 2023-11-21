@@ -1,0 +1,393 @@
+.header {
+  position: relative;
+  min-height: 850px;
+
+  @include vp-1023 {
+    min-height: 550px;
+  }
+
+  @include vp-767 {
+    min-height: 350px;
+  }
+
+  a {
+    cursor: pointer;
+    user-select: none;
+
+    @media (min-width: $vp-768) {
+      &:hover {
+        opacity: 0.7;
+      }
+
+      &:active {
+        opacity: 0.3;
+      }
+    }
+  }
+
+  img {
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+
+    margin: 0 auto;
+    z-index: -100;
+    object-fit: cover;
+    object-position: 50% 100%;
+    // background-color: $color-background-header;
+
+  }
+}
+
+.header__wrapper {
+  background-color: $color-black-russian-0-9;
+  width: 100%;
+}
+
+.header__container {
+  display: flex;
+  gap: 80px;
+  justify-content: space-between;
+  width: $desktop-content;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 32px 0 32px 0;
+
+  @include vp-1279 {
+    width: auto;
+    padding-left: $desktop-padding-asade;
+    padding-right: $desktop-padding-asade;
+  }
+
+  @include vp-1023 {
+    width: 768px;
+    padding: $tablet-padding;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    box-sizing: border-box;
+    gap: 40px;
+  }
+
+  @include vp-767 {
+    width: auto;
+    // gap: 0;
+    padding: 20px 15px;
+    min-height: 62px;
+  }
+
+  &--nojs {
+    @include vp-767 {
+      width: auto;
+      display: flex;
+      justify-content: space-between;
+      padding-right: 0;
+      padding-top: 0;
+      margin-bottom: -50px;
+
+      .header__nav::before {
+        display: none;
+      }
+
+      .header__logo {
+        position: relative;
+        top: 20px;
+      }
+    }
+  }
+}
+
+
+.header__logo {
+  display: block;
+  width: 247px;
+  height: 35px;
+  align-self: center;
+
+  @include vp-1023 {
+    width: 164px;
+    height: 23px;
+  }
+
+  @include vp-767 {
+    width: 123px;
+    height: 17px;
+  }
+}
+
+.header__logo--hidden {
+  display: none;
+}
+
+.header__nav {
+  margin-right: 0;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+
+  @include vp-767 {
+    display: block;
+    margin: 0;
+    position: fixed;
+    width: 285px;
+    height: 100%;
+    right: 0;
+    top: 0;
+    z-index: 10;
+    background-color: $color-extra-light-grey;
+    padding-top: 50px;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &--open {
+      display: block;
+    }
+
+    &--close {
+      display: none;
+    }
+
+    &--nojs {
+      display: block;
+      height: min-content;
+      padding-top: 10px;
+      position: static;
+    }
+  }
+}
+
+// .header__nav::before {
+//   display: none;
+
+//   @include vp-767 {
+//     display: block;
+//     position: absolute;
+//     content: "";
+//     width: 102px;
+//     height: 22px;
+//     background: url("../img/svg/loremIpsum-logo.svg") no-repeat;
+//     top: 20px;
+//     left: 15px;
+//   }
+// }
+
+.header__nav-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  column-gap: 60px;
+  row-gap: 30px;
+  flex-wrap: wrap;
+  
+
+  @include vp-1023 {
+    column-gap: 30px;
+    row-gap: 20px;
+
+  }
+
+  @include vp-767 {
+    flex-direction: column;
+    padding-left: 15px;
+  }
+}
+
+.header__nav-item {
+  list-style: none;
+
+  @include vp-767 {
+    margin: 0;
+    margin-top: 8px;
+
+    &:first-of-type {
+      margin: 0;
+    }
+  }
+
+  & a {
+    display: block;
+    font-family: $ff-lato;
+    font-weight: 600;
+    font-size: 13px;
+    color: $color-default-white;
+    text-transform: uppercase;
+
+    @include vp-767 {
+      color: $color-extra-dark;
+      padding: 10px;
+    }
+  }
+}
+
+.header__toggle {
+  display: none;
+
+  @include vp-767 {
+    display: block;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 24px;
+    right: 15px;
+    background-color: transparent;
+  }
+}
+
+.header__toggle--nojs {
+  display: none;
+}
+
+.header__toggle--close {
+  width: 24px;
+  height: 14px;
+  background-image: url("../img/header/burger.svg");
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  z-index: 100;
+}
+
+.header__toggle--open {
+  width: 13px;
+  height: 13px;
+  background-image: url("../img/header/close.svg");
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  z-index: 100;
+}
+
+
+// HEADER---PROMO
+
+.header__promo {
+  max-width: $vp-780;
+  margin: 0 auto;
+  // padding-left: 95px;
+  padding: 104px 0 104px 0;
+
+  @include vp-1023 {
+    width: auto;
+    margin-left: 0;
+    padding: 45px 45px;
+  }
+
+  @include vp-767 {
+    padding: 25px 0;
+    padding-left: $mobile-padding;
+    padding-right: $mobile-padding;
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: normal;
+    color: $color-default-black;
+    text-transform: uppercase;
+    margin: 0;
+
+    @include vp-1279 {
+      font-size: 40px;
+    }
+
+    @include vp-1023 {
+      font-size: 32px;
+    }
+
+    @include vp-767 {
+      font-size: 22px;
+      padding-right: 30px;
+    }
+
+    span {
+      color: $color-summer-sky;
+    }
+  }
+
+  p {
+    font-size: 20px; 
+    font-weight: 700;
+    color: $color-default-black;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 0;
+    margin-top: 80px;
+    
+    @include vp-1023 {
+      margin-top: 30px;
+      font-size: 18px;
+      margin-top: 60px;
+    }
+
+    @include vp-767 {
+      font-size: 14px;
+      margin-top: 25px;
+    }
+  }
+}
+
+.header__promo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  list-style: none;
+  margin: 0;
+  margin-top: 10px;
+  padding: 0;
+}
+
+.header__promo-item {
+  position: relative;
+  font-size: 20px;
+  font-weight: 40px;
+  padding-left: 25px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-image: url("../img/svg/dash-icon.svg");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    left: 0;
+    top: 0;
+  }
+
+  @include vp-1023 {
+    font-size: 18px;
+  }
+
+  @include vp-767 {
+    font-size: 14px;
+  }
+
+}
+
+.header__promo-buttons-list {
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+  margin: 0;
+  margin-top: 80px;
+  padding: 0;
+  list-style: none;
+
+  @include vp-1023 {
+    margin-top: 40px;
+  }
+
+  @include vp-767 {
+    flex-direction: column;
+    align-items: center;
+    align-content: stretch;
+    margin-top: 25px;
+    gap: 15px;
+  }
+}
+
+.header__promo-button-item {
+  width: 100%;
+}

@@ -1,0 +1,344 @@
+.order {
+    width: 100%;
+
+}
+
+.order__wrapper {
+    width: $desktop-content;
+    margin: 0 auto;
+    padding: 120px 0 150px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include vp-1279 {
+        width: auto;
+        padding-left: $desktop-padding-asade;
+        padding-right: $desktop-padding-asade;
+    }
+
+    @include vp-1023 {
+        padding: $tablet-padding;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    } 
+
+    @include vp-767 {
+        padding-left: $mobile-padding;
+        padding-right: $mobile-padding;
+    }
+
+    h3 {
+        font-size: 36px;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: $color-default-white;
+        margin: 0;
+
+        @include vp-1023 {
+            font-size: 24px;
+        }
+
+        span {
+            color: $color-summer-sky;
+        }
+    }
+}
+
+.order__inf {
+    font-size: 18px;
+    font-weight: 400;
+    color: $color-silver;
+    margin: 0;
+    margin-top: 30px;
+
+    @include vp-1023 {
+        text-align: center;
+        font-size: 14px;
+    }
+}
+
+.order__list {
+    list-style: none;
+    padding: 0;
+    margin: 80px 0 80px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    @include vp-1023 {
+        flex-direction: column;
+        margin: 40px 0 40px 0;
+        gap: 20px;
+    }
+}
+
+.order__item {
+    color: $color-default-white;
+    text-align: center;
+    width: 189px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    
+
+
+    &::after {
+        position: absolute;
+        content: "";
+        width: 110px;
+        height: 6px;
+        background: url("../img/svg/balloons.svg") no-repeat;
+        right: -75px;
+        top: 45px;
+
+        @include vp-1023 {
+            display: none;
+        }
+    }
+
+
+    &:last-of-type {
+        &::after {
+            display: none;
+        }
+    }
+}
+
+
+
+
+.order__item-svg {
+    width: 100px;
+    height: 100px;
+    box-sizing: border-box;
+    background-color: $color-summer-sky;
+    border-radius: 50%;
+    border: 5px solid $color-endeavour;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include vp-1023 {
+        width: 60px;
+        height: 60px;
+    }
+
+    svg {
+        width: 55px;
+        height: 55px;
+
+        @include vp-1023 {
+            width: 33px;
+            height: 33px;
+        }
+    }
+}
+
+.order__item-text {
+    color: $color-default-white;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    text-align: center;
+}
+
+.order__form {
+    width: 100%;
+}
+
+.order__form-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include vp-1023 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include vp-767 {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+.order__form-item {
+    width: 100%;
+
+
+    input, select {
+        border: none;
+        background-color: $color-extra-light-grey;
+        padding: 12px 35px 12px 10px;
+        width: 100%;
+    
+        &::placeholder {
+          font-weight: 400;
+          font-size: 18px;
+          color: #272733;
+          font-weight: 400;
+        }
+    
+        @media (min-width: $vp-768) {
+          &:hover {
+            opacity: 0.7;
+          }
+    
+          &:focus {
+            opacity: 1;
+          }
+        }
+    }
+
+    &--range {
+
+        grid-column: 1 / 3;
+
+        label {
+            color: $color-default-white;
+            font-size: 18px;
+            font-weight: 400;   
+        }
+
+        input {
+            width: 100%;
+
+            fill: rgba(255, 255, 255, 0.70);
+            stroke-width: 1px;
+            stroke: #FFF;
+            background-size: 50px 50px;
+        }
+    }
+
+    &--file {
+
+            width: 100%;
+
+        label {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 12px 10px 12px 10px;
+            background-color: $color-default-white;
+            border: 2px solid $color-summer-sky;
+            border-radius: 3px;
+            gap: 10px;
+            flex-wrap: nowrap;
+
+        }
+
+        p { 
+            margin: 0;
+            font-weight: 400;
+            font-size: 15px;
+            color: $color-jaguar;
+            text-transform: uppercase;
+            text-align: center;
+            position: relative;
+            width: fit-content;
+        }
+
+
+        @include vp-1023 {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+        }
+    }
+}
+
+.order__form-button {
+    grid-column: 2 / 3;
+
+    @include vp-1023 {
+        grid-column: 1 / 2;
+    }
+}
+
+.order__form-select-button {
+    display: block;
+    width: 100%;
+    background-color: $color-extra-light-grey;
+    padding: 12px 35px 12px 10px;
+    width: 100%;
+    font-weight: 400;
+    font-size: 18px;
+    color: $color-jaguar;
+    font-weight: 400;
+    border: none;
+    border: 1px solid $color-default-white;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 3px;
+    position: relative;
+    cursor: pointer;
+
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: url("../img/svg/arrow-icon.svg") no-repeat;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 10px;
+    }
+}
+
+.order__form-select-list {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    // display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    height: 180px;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+        width: 7px;
+        background-color: #3D4050;
+        border-radius: 3px;
+      }
+    
+      &::-webkit-scrollbar-thumb {
+        border-radius: 7px;
+        background-color: #3E9CDC;
+      }
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 3px;
+    border: 1px solid #3D4050;
+    background: rgba(39, 39, 51, 0.90);
+    width: 100%;
+    
+}
+
+.order__form-select-list--show {
+    display: flex;
+}
+
+.order__form-select-item {
+    color: $color-default-white;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 34px;
+
+    &:hover, :active {
+        color: $color-summer-sky-2;
+    }
+}
+
+.order__form-select-wrapper {
+    position: relative;
+}
