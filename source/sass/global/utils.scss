@@ -28,6 +28,10 @@
     background-color: $color-jaguar;
     width: 100%;
     background-size: contain;
+
+    @include vp-1023 {
+      background-size: cover;
+    }
   }
 }
 

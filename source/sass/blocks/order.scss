@@ -1,6 +1,6 @@
 .order {
     width: 100%;
-
+    // background-color: $color-jaguar;
 }
 
 .order__wrapper {
@@ -174,7 +174,7 @@
     width: 100%;
 
 
-    input, select {
+    input[type="text"], input[type="email"] {
         border: none;
         background-color: $color-extra-light-grey;
         padding: 12px 35px 12px 10px;
@@ -200,7 +200,26 @@
 
     &--range {
 
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+
         grid-column: 1 / 3;
+
+        .order__range-label-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: nowrap;
+            gap: 10px;
+        }
+
+        .order__range-value {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 18px;
+            font-weight: 600;
+        }
 
         label {
             color: $color-default-white;
@@ -209,12 +228,25 @@
         }
 
         input {
+            -webkit-appearance: none;
             width: 100%;
+            height: 6px;
+            background-color: rgba(255, 255, 255, 0.70);
+            border: 1px solid $color-default-white;
+            box-sizing: border-box;
+            border-radius: 3px;
+            outline: none;
 
-            fill: rgba(255, 255, 255, 0.70);
-            stroke-width: 1px;
-            stroke: #FFF;
-            background-size: 50px 50px;
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background-color: rgba(66, 169, 237, 1);
+                border: 5px solid rgba(40, 102, 144, 1);
+                box-sizing: border-box;
+                cursor: pointer;
+            }
         }
     }
 

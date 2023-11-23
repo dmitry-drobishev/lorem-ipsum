@@ -6,6 +6,14 @@ mobileMenu();
 
 formSelect();
 
+const rangeValue = document.querySelector('.order__range-value span');
+const inputRange = document.querySelector('.order_range-input');
+
+inputRange.oninput = function () {
+  let value = inputRange.value;
+  rangeValue.textContent = value
+}
+
 // const userTelInput = document.querySelector('.booking__form-item--tel input');
 // userTelInput.addEventListener('input', userTelHandler);
 
@@ -21,14 +29,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
   iosVhFix();
 
-  // Modules
-  // ---------------------------------
-
-  // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
-  // в load следует добавить скрипты, не участвующие в работе первого экрана
-  window.addEventListener('load', () => {
-    initModals();
-  });
 });
 
 
