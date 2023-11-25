@@ -13,3 +13,5 @@
 
 ### Вся разработка ведётся в директории `source`
 ### Итоговый код попадает в директорию `build`
+
+https://dmitry-drobishev.github.io/lorem-ipsum/build/index.html
