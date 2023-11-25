@@ -671,7 +671,7 @@ button,
 
 .header__wrapper {
   position: fixed;
-  z-index: 100;
+  z-index: 1000;
   top: 0;
   left: 0;
   width: 100%;
@@ -787,6 +787,7 @@ button,
   padding: 203px 0 104px 0;
   position: relative;
   left: -195px;
+  z-index: -1;
 }
 
 .header__promo-title {
@@ -1666,6 +1667,7 @@ button,
   }
 
   .header__promo {
+    z-index: 1;
     position: static;
     width: auto;
     margin-left: 0;
