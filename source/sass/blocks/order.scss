@@ -1,6 +1,5 @@
 .order {
     width: 100%;
-    // background-color: $color-jaguar;
 }
 
 .order__wrapper {
@@ -27,21 +26,21 @@
         padding-left: $mobile-padding;
         padding-right: $mobile-padding;
     }
+}
 
-    h3 {
-        font-size: 36px;
-        font-weight: 900;
-        text-transform: uppercase;
-        color: $color-default-white;
-        margin: 0;
+.order__title {
+    font-size: 36px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: $color-default-white;
+    margin: 0;
 
-        @include vp-1023 {
-            font-size: 24px;
-        }
+    @include vp-1023 {
+        font-size: 24px;
+    }
 
-        span {
-            color: $color-summer-sky;
-        }
+    span {
+        color: $color-summer-sky;
     }
 }
 
@@ -61,10 +60,11 @@
 .order__list {
     list-style: none;
     padding: 0;
-    margin: 80px 0 80px 0;
+    margin: 70px 0 72px 0;
     display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 30px;
 
     @include vp-1023 {
         flex-direction: column;
@@ -76,29 +76,30 @@
 .order__item {
     color: $color-default-white;
     text-align: center;
-    width: 189px;
+    width: 209px;
+    box-sizing: border-box;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
     position: relative;
     
-
-
     &::after {
         position: absolute;
         content: "";
         width: 110px;
         height: 6px;
         background: url("../img/svg/balloons.svg") no-repeat;
-        right: -75px;
-        top: 45px;
+        right: -70px;
+        top: 55px;
+        
+
 
         @include vp-1023 {
             display: none;
         }
     }
-
 
     &:last-of-type {
         &::after {
@@ -106,9 +107,6 @@
         }
     }
 }
-
-
-
 
 .order__item-svg {
     width: 100px;
@@ -146,6 +144,10 @@
     text-align: center;
 }
 
+
+// FORM FORM FORM
+
+
 .order__form {
     width: 100%;
 }
@@ -173,28 +175,37 @@
 .order__form-item {
     width: 100%;
 
-
     input[type="text"], input[type="email"] {
         border: none;
-        background-color: $color-extra-light-grey;
-        padding: 12px 35px 12px 10px;
+        border-radius: 3px;
+        border: 2px solid $color-default-white;
+        background-color: rgba(255, 255, 255, 0.85);
+        padding: 13px 35px 13px 10px;
         width: 100%;
+        box-sizing: border-box;
     
         &::placeholder {
           font-weight: 400;
           font-size: 18px;
-          color: #272733;
+          color: $color-jaguar;
           font-weight: 400;
         }
-    
+
         @media (min-width: $vp-768) {
-          &:hover {
-            opacity: 0.7;
-          }
-    
-          &:focus {
-            opacity: 1;
-          }
+            &:hover {
+                border-color: $color-summer-sky;
+                outline-offset: -2px;
+            }
+            
+            &:focus {
+                outline: 2px solid $color-summer-sky;
+                outline-offset: -2px;
+            }
+        }
+        
+        &:invalid {
+            outline: 2px solid $color-torch-red;
+            outline-offset: -2px;
         }
     }
 
@@ -202,8 +213,7 @@
 
         display: flex;
         flex-direction: column;
-        gap: 18px;
-
+        gap: 20px;
         grid-column: 1 / 3;
 
         .order__range-label-wrapper {
@@ -216,7 +226,8 @@
 
         .order__range-value {
             margin: 0;
-            color: rgba(255, 255, 255, 0.85);
+            color: $color-default-white;
+            opacity: 0.85;
             font-size: 18px;
             font-weight: 600;
         }
@@ -235,24 +246,39 @@
             border: 1px solid $color-default-white;
             box-sizing: border-box;
             border-radius: 3px;
-            outline: none;
+            // outline: none;
+            cursor: pointer;
 
             &::-webkit-slider-thumb {
                 -webkit-appearance: none;
-                width: 30px;
-                height: 30px;
+                width: 26px;
+                height: 26px;
                 border-radius: 50%;
                 background-color: rgba(66, 169, 237, 1);
-                border: 5px solid rgba(40, 102, 144, 1);
+                border: 3px solid rgba(40, 102, 144, 1);
                 box-sizing: border-box;
                 cursor: pointer;
+
+                &:hover {
+                    border-color: $color-silver;
+                }
+            }
+
+            &:hover { 
+                border-color: $color-silver;
             }
         }
     }
 
     &--file {
 
-            width: 100%;
+        width: 100%;
+
+        input {
+            &:focus + label{
+                border-color: $color-summer-sky;
+            }
+        }   
 
         label {
             display: flex;
@@ -260,11 +286,30 @@
             align-items: flex-start;
             padding: 12px 10px 12px 10px;
             background-color: $color-default-white;
-            border: 2px solid $color-summer-sky;
+            border: 2px solid $color-default-white;
             border-radius: 3px;
             gap: 10px;
             flex-wrap: nowrap;
+            cursor: pointer;
 
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            @media (min-width: $vp-768) {
+                &:hover {
+                    border-color: $color-summer-sky;
+    
+                    svg {
+                        stroke: $color-summer-sky;
+                    }
+                }
+    
+                &:focus {
+                    border-color: $color-summer-sky;
+                }
+            }
         }
 
         p { 
@@ -288,9 +333,11 @@
 
 .order__form-button {
     grid-column: 2 / 3;
+    margin-top: 30px;
 
     @include vp-1023 {
         grid-column: 1 / 2;
+        margin-top: 10px;
     }
 }
 
@@ -298,19 +345,19 @@
     display: block;
     width: 100%;
     background-color: $color-extra-light-grey;
-    padding: 12px 35px 12px 10px;
+    padding: 11px 35px 11px 10px;
     width: 100%;
     font-weight: 400;
     font-size: 18px;
     color: $color-jaguar;
     font-weight: 400;
     border: none;
-    border: 1px solid $color-default-white;
+    border: 2px solid $color-default-white;
+    box-sizing: border-box;
     background-color: rgba(255, 255, 255, 0.85);
     border-radius: 3px;
     position: relative;
     cursor: pointer;
-
 
     &::after {
         content: "";
@@ -322,6 +369,16 @@
         transform: translateY(-50%);
         right: 10px;
     }
+
+    @media (min-width: $vp-768) {
+        &:hover {
+            border-color: $color-summer-sky;
+        }
+
+        &focus {
+            border-color: black;
+        }
+    }
 }
 
 .order__form-select-list {
@@ -329,7 +386,6 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    // display: flex;
     flex-direction: column;
     gap: 5px;
     padding: 10px;
@@ -337,20 +393,20 @@
     overflow-y: auto;
     &::-webkit-scrollbar {
         width: 7px;
-        background-color: #3D4050;
+        background-color: $color-blue-zodiac;
         border-radius: 3px;
       }
     
       &::-webkit-scrollbar-thumb {
         border-radius: 7px;
-        background-color: #3E9CDC;
+        background-color: $color-summer-sky;
       }
 
     position: absolute;
     top: 0;
     left: 0;
     border-radius: 3px;
-    border: 1px solid #3D4050;
+    border: 1px solid $color-blue-zodiac;
     background: rgba(39, 39, 51, 0.90);
     width: 100%;
     
