@@ -671,6 +671,9 @@ button,
 
 .header__wrapper {
   position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
   width: 100%;
   border: 1px solid #000000;
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0.2))), rgba(16, 16, 29, 0.9);
