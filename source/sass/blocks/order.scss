@@ -280,7 +280,7 @@
             }
         }   
 
-        label {
+        .order__form-label-file {
             display: flex;
             justify-content: center;
             align-items: flex-start;
@@ -295,6 +295,18 @@
             svg {
                 width: 20px;
                 height: 20px;
+            }
+
+            .order__form-text-file {
+                display: block;
+                margin: 0;
+                font-weight: 400;
+                font-size: 15px;
+                color: $color-jaguar;
+                text-transform: uppercase;
+                text-align: center;
+                position: relative;
+                width: fit-content;
             }
 
             @media (min-width: $vp-768) {
@@ -312,28 +324,25 @@
             }
         }
 
-        p { 
-            margin: 0;
-            font-weight: 400;
-            font-size: 15px;
-            color: $color-jaguar;
-            text-transform: uppercase;
-            text-align: center;
-            position: relative;
-            width: fit-content;
-        }
-
 
         @include vp-1023 {
             grid-column: 2 / 3;
             grid-row: 2 / 3;
         }
     }
+
+    &--button {
+        grid-column: 2 / 3;
+
+        @include vp-1023 {
+            grid-column: 1 / 2;
+        }
+    }
 }
 
 .order__form-button {
-    grid-column: 2 / 3;
     margin-top: 30px;
+    width: 100%;
 
     @include vp-1023 {
         grid-column: 1 / 2;
@@ -417,14 +426,17 @@
 }
 
 .order__form-select-item {
-    color: $color-default-white;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 34px;
+    a {
+        display: block;
+        color: $color-default-white;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 34px;
 
-    &:hover, :active {
-        color: $color-summer-sky-2;
-    }
+        &:hover, :active {
+            color: $color-summer-sky-2;
+        }
+    } 
 }
 
 .order__form-select-wrapper {

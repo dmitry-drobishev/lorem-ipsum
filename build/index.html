@@ -76,7 +76,7 @@
 
         <section class="order">
           <div class="order__wrapper">
-            <h2 class="order__title">Оформление <span>заказа</span></h3>
+            <h2 class="order__title">Оформление <span>заказа</span></h2>
             <p class="order__inf">Перед заполнением формы ознакомьтесь с&nbsp;нашей схемой работы!</p>
 
             <ul class="order__list">
@@ -129,13 +129,21 @@
                 <ul class="order__form-list">
 
                   <li class="order__form-item order__form-item--select">
-                    <a class="order__form-select-button" id="form-select-button">Выберете тип системы</a>
+                    <a href="#" class="order__form-select-button" id="form-select-button">Выберете тип системы</a>
                       <div class="order__form-select-wrapper">
                         <ul class="order__form-select-list">
-                          <li class="order__form-select-item" data-value="Nemo enim ipsam">Nemo enim ipsam</li>
-                          <li class="order__form-select-item" data-value="Et harum quidem">Et harum quidem</li>
-                          <li class="order__form-select-item" data-value="Et harum quidem">Et harum quidem</li>
-                          <li class="order__form-select-item" data-value="Itaque earum rerum">Itaque earum rerum</li>
+                          <li class="order__form-select-item" data-value="Nemo enim ipsam">
+                            <a href="#">Nemo enim ipsam</a>
+                          </li>
+                          <li class="order__form-select-item" data-value="Et harum quidem">
+                            <a href="#">Et harum quidem</a> 
+                          </li>
+                          <li class="order__form-select-item" data-value="Et harum quidem">
+                            <a href="#">Et harum quidem</a> 
+                          </li>
+                          <li class="order__form-select-item" data-value="Itaque earum rerum">
+                            <a href="#">Itaque earum rerum</a> 
+                          </li>
                         </ul>
                           <input class="visually-hidden order__form-select" type="text" name="form-select" value="">
                       </div>
@@ -156,7 +164,7 @@
                       <label for="range">Sed ut perspiciatis, unde omnis iste natus</label>
                       <p class="order__range-value"><span>75</span>&nbsp;%</p>
                     </div>
-                    <input class="order__range-input" name="range" type="range" min="0" max="100" value="75">
+                    <input class="order__range-input" name="range" id="range" type="range" min="0" max="100" value="75">
                   </li>
 
                   <li class="order__form-item order__form-item--file">
@@ -165,11 +173,13 @@
                       <svg width="20" height="20">
                         <use xlink:href="img/sprite_auto.svg#document-icon"></use>
                       </svg>
-                      <p class="order__form-text-file">Прикрепить файл</p> 
+                      <span class="order__form-text-file">Прикрепить файл</span> 
                     </label>
                   </li>
 
-                  <button class="button button--important order__form-button" type="submit" id="form-button">Отправить</button>
+                  <li class="order__form-item order__form-item--button">
+                    <button class="button button--important order__form-button" type="submit" id="form-button">Отправить</button>
+                  </li>
                 </ul> 
               </form>
             </div>

@@ -1,15 +1,19 @@
+const selectButton = document.querySelector('.order__form-select-button');
+const selectElements = document.querySelectorAll('.order__form-select-item a');
+const selectElementsList = document.querySelector('.order__form-select-list');
+const selectValue = document.querySelector('.order__form-select');
 
 const formSelect = () => {
     
-    document.querySelector('.order__form-select-button').addEventListener('click', function () {
+    selectButton.addEventListener('click', function () {
         
-        document.querySelector('.order__form-select-list').classList.toggle('order__form-select-list--show');
+        selectElementsList.classList.toggle('order__form-select-list--show');
         
-        document.querySelectorAll('.order__form-select-item').forEach( function (listItem) {
+        selectElements.forEach( function (listItem) {
             listItem.addEventListener('click', function () {
-                document.querySelector('.order__form-select-button').innerText = this.innerText;
-                document.querySelector('.order__form-select-list').classList.remove('order__form-select-list--show');
-                document.querySelector('.order__form-select').value = this.dataset.value;
+                selectButton.innerText = this.innerText;
+                selectElementsList.classList.remove('order__form-select-list--show');
+                selectValue.value = this.dataset.value;
             });
         })
     });

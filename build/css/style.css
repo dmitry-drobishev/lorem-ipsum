@@ -1355,7 +1355,7 @@ button,
   border-color: #3e9cdc;
 }
 
-.order__form-item--file label {
+.order__form-item--file .order__form-label-file {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1375,12 +1375,13 @@ button,
   cursor: pointer;
 }
 
-.order__form-item--file label svg {
+.order__form-item--file .order__form-label-file svg {
   width: 20px;
   height: 20px;
 }
 
-.order__form-item--file p {
+.order__form-item--file .order__form-label-file .order__form-text-file {
+  display: block;
   margin: 0;
   font-weight: 400;
   font-size: 15px;
@@ -1393,11 +1394,15 @@ button,
   width: fit-content;
 }
 
-.order__form-button {
+.order__form-item--button {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2 / 3;
+}
+
+.order__form-button {
   margin-top: 30px;
+  width: 100%;
 }
 
 .order__form-select-button {
@@ -1472,28 +1477,22 @@ button,
   display: flex;
 }
 
-.order__form-select-item {
+.order__form-select-item a {
+  display: block;
   color: #ffffff;
   font-size: 18px;
   font-weight: 400;
   line-height: 34px;
 }
 
-.order__form-select-item:hover,
-.order__form-select-item :active {
+.order__form-select-item a:hover,
+.order__form-select-item a :active {
   color: #42a9ed;
 }
 
 .order__form-select-wrapper {
   position: relative;
 }
-
-/* @media (hover: hover), screen and (min-width: 0\0) {
-  &:hover,
-  &:focus {
-    color: $color-default-white;
-  }
-} */
 
 @media (min-width: 768px) {
   .header__logo-link:hover {
@@ -1541,15 +1540,15 @@ button,
     outline-offset: -2px;
   }
 
-  .order__form-item--file label:hover {
+  .order__form-item--file .order__form-label-file:hover {
     border-color: #3e9cdc;
   }
 
-  .order__form-item--file label:hover svg {
+  .order__form-item--file .order__form-label-file:hover svg {
     stroke: #3e9cdc;
   }
 
-  .order__form-item--file label:focus {
+  .order__form-item--file .order__form-label-file:focus {
     border-color: #3e9cdc;
   }
 
@@ -1789,6 +1788,12 @@ button,
     -ms-grid-row: 2;
     -ms-grid-row-span: 1;
     grid-row: 2 / 3;
+  }
+
+  .order__form-item--button {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / 2;
   }
 
   .order__form-button {
