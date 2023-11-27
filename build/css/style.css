@@ -787,7 +787,6 @@ button,
   padding: 203px 0 104px 0;
   position: relative;
   left: -195px;
-  z-index: -1;
 }
 
 .header__promo-title {
